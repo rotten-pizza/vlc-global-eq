@@ -30,8 +30,18 @@ class VlcImporterTest {
     fun `export round-trips back to the same JSON`() {
         val p = VlcImporter.parse(fixture).presets.single()
         val exported = JSONObject(VlcExporter.export(listOf(p)))
-        assertTrue(JSONObject(fixture).similar(exported))
+        assertTrue(jsonEquals(JSONObject(fixture), exported))
         assertEquals(p, VlcImporter.parse(exported.toString()).presets.single())
+    }
+
+    /** Structural JSON equality (Android's org.json has no `similar`); numbers compare by value. */
+    private fun jsonEquals(a: Any?, b: Any?): Boolean = when {
+        a is JSONObject && b is JSONObject ->
+            a.length() == b.length() && a.keys().asSequence().all { b.has(it) && jsonEquals(a.opt(it), b.opt(it)) }
+        a is JSONArray && b is JSONArray ->
+            a.length() == b.length() && (0 until a.length()).all { jsonEquals(a.opt(it), b.opt(it)) }
+        a is Number && b is Number -> a.toDouble() == b.toDouble()
+        else -> a == b
     }
 
     @Test
