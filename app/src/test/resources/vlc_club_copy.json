@@ -1,0 +1,21 @@
+{
+  "bands": [
+    {"bandValue": 14.315821, "equalizerEntry": 23, "index": 0},
+    {"bandValue": 13.80448,  "equalizerEntry": 23, "index": 1},
+    {"bandValue": 13.68421,  "equalizerEntry": 23, "index": 2},
+    {"bandValue": 5.8,       "equalizerEntry": 23, "index": 3},
+    {"bandValue": 0.5,       "equalizerEntry": 23, "index": 4},
+    {"bandValue": -0.5,      "equalizerEntry": 23, "index": 5},
+    {"bandValue": 0.4,       "equalizerEntry": 23, "index": 6},
+    {"bandValue": 0.0,       "equalizerEntry": 23, "index": 7},
+    {"bandValue": 9.2,       "equalizerEntry": 23, "index": 8},
+    {"bandValue": 8.7,       "equalizerEntry": 23, "index": 9}
+  ],
+  "equalizerEntry": {
+    "id": 23,
+    "isDisabled": false,
+    "name": "Club (copy)_",
+    "preamp": -2.0,
+    "presetIndex": -1
+  }
+}

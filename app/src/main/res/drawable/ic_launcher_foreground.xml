@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Five equalizer bars in VLC orange, inside the 66dp safe zone. -->
+    <path android:fillColor="#FF8800" android:pathData="M33,52h6v24h-6zM43,40h6v36h-6zM53,58h6v18h-6zM63,34h6v42h-6zM73,48h6v28h-6z" />
+</vector>
