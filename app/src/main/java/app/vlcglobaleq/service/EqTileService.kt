@@ -1,5 +1,6 @@
 package app.vlcglobaleq.service
 
+import android.annotation.SuppressLint
 import android.app.PendingIntent
 import android.content.Intent
 import android.os.Build
@@ -19,6 +20,7 @@ class EqTileService : TileService() {
         render()
     }
 
+    @SuppressLint("StartActivityAndCollapseDeprecated") // the Intent overload is only used below API 34
     private fun openApp() {
         val intent = Intent(this, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         if (Build.VERSION.SDK_INT >= 34) {
