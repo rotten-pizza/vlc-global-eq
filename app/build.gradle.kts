@@ -30,12 +30,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    lint {
-        // Print every issue in the build log so CI failures are readable without the report artifact.
-        textReport = true
-        textOutput = file("stdout")
-    }
-
     testOptions {
         unitTests.isReturnDefaultValues = true
     }

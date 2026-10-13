@@ -110,6 +110,11 @@ class VlcImporterTest {
     }
 
     @Test
+    fun `accepts a leading byte-order mark`() {
+        assertEquals(1, VlcImporter.parse("\uFEFF" + fixture).presets.size)
+    }
+
+    @Test
     fun `de-duplicates names`() {
         assertEquals("Rock", VlcImporter.uniqueName("Rock", listOf("Pop")))
         assertEquals("Rock (2)", VlcImporter.uniqueName("Rock", listOf("Rock")))

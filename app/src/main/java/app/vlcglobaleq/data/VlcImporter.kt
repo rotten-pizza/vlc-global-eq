@@ -20,7 +20,7 @@ object VlcImporter {
 
     fun parse(text: String): ImportResult {
         val root = try {
-            JSONTokener(text.trim().removePrefix("﻿")).nextValue()
+            JSONTokener(text.trim().removePrefix("\uFEFF")).nextValue()
         } catch (e: JSONException) {
             return ImportResult(emptyList(), listOf("Not valid JSON: ${e.message}"))
         }

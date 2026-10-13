@@ -27,6 +27,9 @@ jobs:
             app/build/outputs/apk/release/*.apk
       - name: Lint
         run: ./gradlew --no-daemon lintDebug
+      - name: Print lint report
+        if: failure()
+        run: find app/build -name 'lint-results-debug.txt' -exec cat {} + || true
       - uses: actions/upload-artifact@v4
         if: always()
         with:
